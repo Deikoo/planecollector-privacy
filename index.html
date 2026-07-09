@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – PlaneCollector</title>
+  <style>
+    :root {
+      --bg:       #0a0e1a;
+      --surface:  #111827;
+      --border:   #1e293b;
+      --blue:     #1a73e8;
+      --blue-dim: rgba(26,115,232,0.15);
+      --text:     #e2e8f0;
+      --muted:    #94a3b8;
+      --accent:   #38bdf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue-dim);
+      border: 1.5px solid rgba(26,115,232,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .logo-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-name span {
+      color: var(--blue);
+    }
+
+    header p.tagline {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ── Main layout ─────────────────────────────────────────── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span { color: var(--blue); }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 12px;
+      background: var(--blue-dim);
+      border: 1px solid rgba(26,115,232,0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--blue);
+      letter-spacing: 0.4px;
+    }
+
+    /* ── Sections ────────────────────────────────────────────── */
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    section h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 16px;
+      background: var(--blue);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    section p {
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    section ul {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    section ul li {
+      font-size: 15px;
+      padding: 6px 0;
+      padding-left: 18px;
+      position: relative;
+      color: var(--text);
+    }
+
+    section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 13px;
+    }
+
+    /* ── Table ───────────────────────────────────────────────── */
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead tr {
+      background: var(--surface);
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 16px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+    td:first-child { color: var(--accent); font-family: monospace; font-size: 13px; }
+
+    /* ── Highlight box ───────────────────────────────────────── */
+    .highlight {
+      background: var(--blue-dim);
+      border: 1px solid rgba(26,115,232,0.3);
+      border-radius: 10px;
+      padding: 18px 20px;
+      font-size: 14px;
+      color: var(--text);
+      margin-top: 12px;
+    }
+
+    .highlight strong { color: var(--blue); }
+
+    /* ── Contact ─────────────────────────────────────────────── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 12px;
+    }
+
+    .contact-box p { font-size: 14px; color: var(--muted); }
+
+    .contact-box a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity .15s;
+    }
+
+    .contact-box a:hover { opacity: .85; }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--muted); text-decoration: underline; }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      main { padding: 32px 16px 64px; }
+      td, th { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────── -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">✈️</div>
+      <div class="logo-name">Plane<span>Collector</span></div>
+    </div>
+    <p class="tagline">Spot it. Shoot it. Collect it.</p>
+  </header>
+
+  <!-- ── Main ────────────────────────────────────────────────── -->
+  <main>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Privacy <span>Policy</span></h1>
+      <p>
+        We built PlaneCollector with privacy as a first principle.
+        This page explains exactly what data is collected, why, and
+        what never leaves your device.
+      </p>
+      <span class="badge">Last updated: July 2026</span>
+    </div>
+
+    <!-- 1 -->
+    <section>
+      <h2>1. What we collect</h2>
+      <p>
+        PlaneCollector stores your captures, scores, and collection data
+        <strong>locally on your device</strong> (SQLite). If you sign in
+        with Google, your score and capture counts are synced to our cloud
+        database (Supabase) solely to power the global leaderboard.
+        No photos ever leave your device.
+      </p>
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <h2>2. Camera</h2>
+      <p>
+        Photos are taken to identify aircraft. AI inference runs entirely
+        <strong>on-device</strong> using Google ML Kit — no image data is
+        ever transmitted. Photos are stored only in the app's local
+        directory and are never uploaded to any server.
+      </p>
+    </section>
+
+    <!-- 3 -->
+    <section>
+      <h2>3. Location (GPS)</h2>
+      <p>
+        Your location is used to find aircraft near you via the
+        OpenSky Network. Only a <strong>bounding box</strong> (a
+        rectangular area, not your exact coordinates) is sent in the
+        request. Your location is never stored on any server and is
+        never tied to your account.
+      </p>
+    </section>
+
+    <!-- 4 -->
+    <section>
+      <h2>4. Third-party services</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Data sent</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OpenSky Network</td>
+              <td>Lat/lon bounding box</td>
+              <td>Find nearby aircraft</td>
+            </tr>
+            <tr>
+              <td>hexdb.io</td>
+              <td>ICAO24 hex code</td>
+              <td>Look up registration &amp; type</td>
+            </tr>
+            <tr>
+              <td>FlightRadar24</td>
+              <td>Aircraft registration</td>
+              <td>Fetch route data</td>
+            </tr>
+            <tr>
+              <td>Planespotters.net</td>
+              <td>Registration + email (User-Agent)</td>
+              <td>Aircraft photos — <strong>opt-in only</strong></td>
+            </tr>
+            <tr>
+              <td>Supabase</td>
+              <td>Score &amp; capture count</td>
+              <td>Leaderboard (when signed in)</td>
+            </tr>
+            <tr>
+              <td>Wikimedia Commons</td>
+              <td>Aircraft type name string</td>
+              <td>Fetch generic type image</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight" style="margin-top:16px;">
+        <strong>Planespotters.net note:</strong> This feature is disabled by
+        default. If you enable it in Settings, you provide an email address
+        that is sent as a User-Agent header to Planespotters.net only —
+        per their API terms. It is stored locally on your device and is
+        never sent to any other service.
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <h2>5. Analytics &amp; tracking</h2>
+      <p>
+        We do not use <strong>any</strong> analytics, crash reporting,
+        advertising, or telemetry SDK. No user behaviour is tracked in
+        any way.
+      </p>
+      <div class="highlight">
+        <strong>What is never sent:</strong> user photos, device ID,
+        precise GPS point, email to any service other than
+        Planespotters.net (opt-in).
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <h2>6. Data retention</h2>
+      <p>
+        All local data (captures, photos, settings) is stored on your
+        device and removed when you uninstall the app. Cloud data (score,
+        capture count) is deleted on request — see the contact section
+        below.
+      </p>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <h2>7. Children</h2>
+      <p>
+        PlaneCollector is not directed at children under 13 and we do not
+        knowingly collect personal data from children. If you believe a
+        child has provided data, please contact us and we will delete it.
+      </p>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <h2>8. Changes to this policy</h2>
+      <p>
+        If we make material changes, the "Last updated" date at the top of
+        this page will be revised. Continued use of the app after changes
+        are posted constitutes acceptance.
+      </p>
+    </section>
+
+    <!-- 9 – Contact -->
+    <section>
+      <h2>9. Contact &amp; data deletion</h2>
+      <div class="contact-box">
+        <p>
+          Questions about this policy or requests to delete your cloud data?
+          Open an issue in the repository or send an email and we will
+          respond within 30 days.
+        </p>
+        <!-- TODO: replace with your real contact link / email -->
+        <a href="mailto:contact@example.com">Contact us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer>
+    <p>© 2026 PlaneCollector. All rights reserved.</p>
+    <p style="margin-top:6px;">
+      This policy applies to the PlaneCollector Android &amp; iOS app.
+    </p>
+  </footer>
+
+</body>
+</html>
