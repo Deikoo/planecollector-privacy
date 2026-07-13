@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ra<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -242,6 +242,15 @@
 
     .contact-box a:hover { opacity: .85; }
 
+    .contact-box a.danger {
+      background: transparent;
+      border: 1px solid #ef4444;
+      color: #ef4444;
+      margin-left: 10px;
+    }
+
+    .contact-box a.danger:hover { background: rgba(239,68,68,0.1); opacity: 1; }
+
     /* ── Footer ──────────────────────────────────────────────── */
     footer {
       text-align: center;
@@ -377,16 +386,20 @@
 
     <!-- 5 -->
     <section>
-      <h2>5. Analytics &amp; tracking</h2>
+      <h2>5. Ads &amp; tracking</h2>
       <p>
-        We do not use <strong>any</strong> analytics, crash reporting,
-        advertising, or telemetry SDK. No user behaviour is tracked in
-        any way.
+        PlaneCollector uses <strong>Google AdMob</strong> to display
+        rewarded ads (optional, in exchange for extra catches). AdMob
+        may collect a device advertising ID and device information for
+        ad personalisation, subject to
+        <a href="https://policies.google.com/privacy" style="color:var(--blue)">Google's Privacy Policy</a>.
+        You can opt out of personalised ads in your device settings
+        (Google &rarr; Ads &rarr; Opt out of Ads Personalisation).
+        We do not use any other analytics, crash reporting, or telemetry SDK.
       </p>
       <div class="highlight">
-        <strong>What is never sent:</strong> user photos, device ID,
-        precise GPS point, email to any service other than
-        Planespotters.net (opt-in).
+        <strong>What is never sent:</strong> user photos, precise GPS point,
+        email to any service other than Planespotters.net (opt-in).
       </div>
     </section>
 
@@ -426,12 +439,13 @@
       <h2>9. Contact &amp; data deletion</h2>
       <div class="contact-box">
         <p>
-          Questions about this policy or requests to delete your cloud data?
-          Open an issue in the repository or send an email and we will
-          respond within 30 days.
+          Questions about this policy, or want to delete your account and
+          all associated cloud data? Send us an email and we will respond
+          within 30 days.
         </p>
-        <!-- TODO: replace with your real contact link / email -->
+        <!-- TODO: replace with your real contact email -->
         <a href="mailto:deikoo@msn.com">Contact us</a>
+        <a href="mailto:deikoo@msn.com?subject=Delete%20my%20PlaneCollector%20account&body=Please%20delete%20my%20account%20and%20all%20associated%20data.%20My%20registered%20email%20is%3A%20" class="danger">Delete my account</a>
       </div>
     </section>
 
