@@ -291,7 +291,7 @@ ra<!DOCTYPE html>
         This page explains exactly what data is collected, why, and
         what never leaves your device.
       </p>
-      <span class="badge">Last updated: July 2026</span>
+      <span class="badge">Last updated: August 2026</span>
     </div>
 
     <!-- 1 -->
@@ -300,9 +300,19 @@ ra<!DOCTYPE html>
       <p>
         PlaneCollector stores your captures, scores, and collection data
         <strong>locally on your device</strong> (SQLite). If you sign in
-        with Google, your score and capture counts are synced to our cloud
-        database (Supabase) solely to power the global leaderboard.
-        No photos ever leave your device.
+        with Google, the following data is synced to our cloud database
+        (Supabase) solely to power the global leaderboard and to maintain
+        your subscription status:
+      </p>
+      <ul style="margin-top:10px;">
+        <li>Google account ID (anonymised user identifier)</li>
+        <li>Display name and profile picture URL (from Google Sign-In)</li>
+        <li>Total capture count and score</li>
+        <li>Subscription tier and status (premium or basic)</li>
+      </ul>
+      <p style="margin-top:10px;">
+        No photos ever leave your device. All capture details and images
+        are stored locally only.
       </p>
     </section>
 
@@ -363,9 +373,19 @@ ra<!DOCTYPE html>
               <td>Aircraft photos — <strong>opt-in only</strong></td>
             </tr>
             <tr>
+              <td>Google Sign-In</td>
+              <td>Account ID, display name, profile picture URL</td>
+              <td>Authentication &amp; leaderboard identity</td>
+            </tr>
+            <tr>
               <td>Supabase</td>
-              <td>Score &amp; capture count</td>
-              <td>Leaderboard (when signed in)</td>
+              <td>Score, capture count, subscription status</td>
+              <td>Leaderboard &amp; subscription sync (when signed in)</td>
+            </tr>
+            <tr>
+              <td>Apple App Store / Google Play</td>
+              <td>Purchase receipt (processed by Apple/Google)</td>
+              <td>In-app purchase verification</td>
             </tr>
             <tr>
               <td>Wikimedia Commons</td>
@@ -405,7 +425,47 @@ ra<!DOCTYPE html>
 
     <!-- 6 -->
     <section>
-      <h2>6. Data retention</h2>
+      <h2>6. In-App Purchases &amp; Payments</h2>
+      <p>
+        PlaneCollector offers optional in-app purchases (subscriptions and
+        consumable items) processed entirely by <strong>Apple App Store</strong>
+        (iOS) or <strong>Google Play</strong> (Android). We never receive,
+        store, or process your payment card details — all billing is handled
+        by Apple or Google under their respective payment policies.
+      </p>
+      <p style="margin-top:10px;">
+        Upon a confirmed purchase, our server receives a <em>purchase token</em>
+        or <em>transaction ID</em> from the platform solely to verify the
+        purchase is genuine and to activate your subscription or consumable.
+        This token is stored in our database (Supabase) linked to your account
+        and is used only for subscription status checks. It is deleted when
+        your account is deleted.
+      </p>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <h2>7. Data Security</h2>
+      <p>
+        We take reasonable technical measures to protect your data:
+      </p>
+      <ul style="margin-top:10px;">
+        <li>All communication between the app and our servers uses <strong>HTTPS/TLS encryption</strong>.</li>
+        <li>Cloud data is stored in <strong>Supabase</strong> (hosted on AWS), which provides encryption at rest and in transit.</li>
+        <li>Access to cloud data is restricted by Row-Level Security (RLS) — you can only read and modify your own data.</li>
+        <li>Server-side functions run in an isolated environment with no access to other users' data.</li>
+        <li>Photos and captures never leave your device and are therefore not subject to network-level risk.</li>
+      </ul>
+      <p style="margin-top:10px;">
+        No system is perfectly secure. If you believe there has been a
+        security incident, please contact us immediately at
+        <a href="mailto:deikoo@msn.com" style="color:var(--blue)">deikoo@msn.com</a>.
+      </p>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <h2>8. Data retention</h2>
       <p>
         All local data (captures, photos, settings) is stored on your
         device and removed when you uninstall the app. Cloud data (score,
@@ -414,9 +474,9 @@ ra<!DOCTYPE html>
       </p>
     </section>
 
-    <!-- 7 -->
+    <!-- 9 -->
     <section>
-      <h2>7. Children</h2>
+      <h2>9. Children</h2>
       <p>
         PlaneCollector is not directed at children under 13 and we do not
         knowingly collect personal data from children. If you believe a
@@ -424,9 +484,9 @@ ra<!DOCTYPE html>
       </p>
     </section>
 
-    <!-- 8 -->
+    <!-- 10 -->
     <section>
-      <h2>8. Changes to this policy</h2>
+      <h2>10. Changes to this policy</h2>
       <p>
         If we make material changes, the "Last updated" date at the top of
         this page will be revised. Continued use of the app after changes
@@ -434,9 +494,9 @@ ra<!DOCTYPE html>
       </p>
     </section>
 
-    <!-- 9 – Contact -->
+    <!-- 11 – Contact -->
     <section>
-      <h2>9. Contact &amp; data deletion</h2>
+      <h2>11. Contact &amp; data deletion</h2>
       <div class="contact-box">
         <p>
           Questions about this policy, or want to delete your account and
