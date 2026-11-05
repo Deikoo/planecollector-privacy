@@ -262,6 +262,31 @@ ra<!DOCTYPE html>
 
     footer a { color: var(--muted); text-decoration: underline; }
 
+    .doc-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .doc-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .doc-nav a[aria-current="page"] {
+      color: var(--blue);
+      border-color: rgba(26,115,232,0.45);
+      background: var(--blue-dim);
+    }
+
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 480px) {
       main { padding: 32px 16px 64px; }
@@ -278,6 +303,10 @@ ra<!DOCTYPE html>
       <div class="logo-name">Plane<span>Collector</span></div>
     </div>
     <p class="tagline">Spot it. Shoot it. Collect it.</p>
+    <nav class="doc-nav" aria-label="Legal documents">
+      <a href="https://deikoo.github.io/planecollector-privacy/" aria-current="page">Privacy Policy</a>
+      <a href="https://deikoo.github.io/planecollector-terms/">Terms of Service</a>
+    </nav>
   </header>
 
   <!-- ── Main ────────────────────────────────────────────────── -->
@@ -516,6 +545,9 @@ ra<!DOCTYPE html>
     <p>© 2026 PlaneCollector. All rights reserved.</p>
     <p style="margin-top:6px;">
       This policy applies to the PlaneCollector Android &amp; iOS app.
+    </p>
+    <p style="margin-top:8px;">
+      <a href="https://deikoo.github.io/planecollector-terms/">Terms of Service</a>
     </p>
   </footer>
 
