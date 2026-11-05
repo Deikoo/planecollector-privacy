@@ -316,61 +316,148 @@
     <div class="hero">
       <h1>Privacy <span>Policy</span></h1>
       <p>
-        We built PlaneCollector with privacy as a first principle.
-        This page explains exactly what data is collected, why, and
-        what never leaves your device.
+        This page explains what PlaneCollector stores on your device,
+        what is saved to your account, and what other players can see.
+        It covers the Android and iOS apps.
       </p>
-      <span class="badge">Last updated: August 2026</span>
+      <span class="badge">Last updated: 5 November 2026</span>
     </div>
 
     <!-- 1 -->
-    <section>
-      <h2>1. What we collect</h2>
+    <section id="accounts">
+      <h2>1. Accounts: Google, Apple, and Guest Mode</h2>
       <p>
-        PlaneCollector stores your captures, scores, and collection data
-        <strong>locally on your device</strong> (SQLite). If you sign in
-        with Google, the following data is synced to our cloud database
-        (Supabase) solely to power the global leaderboard and to maintain
-        your subscription status:
+        You can sign in with Google or Apple, or, when the app offers it,
+        continue as a guest. A guest account is an anonymous account with
+        its own id. It is not linked to Google or Apple until you choose
+        to link one. Linking keeps that same account, including captures
+        and purchases already on it. We do not merge it with a different
+        PlaneCollector account that already uses that Google or Apple identity.
       </p>
-      <ul style="margin-top:10px;">
-        <li>Google account ID (anonymised user identifier)</li>
-        <li>Display name and profile picture URL (from Google Sign-In)</li>
-        <li>Total capture count and score</li>
-        <li>Subscription tier and status (premium or basic)</li>
-      </ul>
       <p style="margin-top:10px;">
-        No photos ever leave your device. All capture details and images
-        are stored locally only.
+        If the sign-in provider shares them, we store the display name,
+        profile-picture URL, and email address with the sign-in account.
+        The email address is not shown on the leaderboard. If no name is
+        available, the profile name defaults to “Pilot”. Country is taken
+        from the Google locale when present, otherwise from the device
+        locale, and is used for the country leaderboard. You can change
+        the display name and country in the app.
       </p>
+      <div class="highlight" style="margin-top:16px;">
+        <strong>Guest accounts.</strong>
+        A guest account lives in that session on the device. If you sign
+        out, uninstall the app, clear the app’s data, or lose the device
+        before linking Google or Apple, you may not be able to open that
+        account again. Cloud data for a guest account you can no longer
+        sign into is not automatically deleted. Email us if you need help
+        identifying it.
+      </div>
     </section>
 
     <!-- 2 -->
-    <section>
-      <h2>2. Camera</h2>
+    <section id="on-device">
+      <h2>2. On your device</h2>
       <p>
-        Photos are taken to identify aircraft. AI inference runs entirely
-        <strong>on-device</strong> using Google ML Kit — no image data is
-        ever transmitted. Photos are stored only in the app's local
-        directory and are never uploaded to any server.
+        The app keeps a local database of your collection: capture records,
+        photos, settings, and game progress. If you turn on the optional
+        Planespotters.net photos, the email you enter is stored on the
+        device. If you connect an optional OpenSky account, the client id
+        and client secret are stored on the device and sent only to OpenSky
+        to request aircraft data.
+      </p>
+      <p style="margin-top:10px;">
+        Uninstalling the app removes this local data. Signing out or
+        deleting the account also clears the local collection for that
+        account.
       </p>
     </section>
 
     <!-- 3 -->
-    <section>
-      <h2>3. Location (GPS)</h2>
+    <section id="cloud">
+      <h2>3. In your account</h2>
       <p>
-        Your location is used to find aircraft near you via the
-        OpenSky Network. Only a <strong>bounding box</strong> (a
-        rectangular area, not your exact coordinates) is sent in the
-        request. Your location is never stored on any server and is
-        never tied to your account.
+        When you are signed in, including as a guest, the app syncs the
+        collection to our database (Supabase) so the game, score, and
+        purchases can follow that account. A capture record can include:
+      </p>
+      <ul style="margin-top:10px;">
+        <li>time of the capture, score, and rarity;</li>
+        <li>registration, aircraft type, operator, callsign, flight number, route, and airports;</li>
+        <li>the device’s latitude and longitude at the time of the capture;</li>
+        <li>the aircraft’s reported latitude, longitude, altitude, and speed, when we have them;</li>
+        <li>the storage path of a backed-up photo, if you uploaded one.</li>
+      </ul>
+      <p style="margin-top:10px;">
+        Your profile stores the display name, avatar URL, country, total
+        score, capture count, weekly results, and subscription tier
+        (basic or premium). Purchase tokens or transaction ids are stored
+        only to check that a store purchase is genuine and to turn on
+        Premium or a consumable. We do not receive your card number.
+      </p>
+      <p style="margin-top:10px;">
+        Other signed-in players cannot read your capture records. They
+        can read profile rows, which is how the leaderboard works. See
+        section 6.
       </p>
     </section>
 
     <!-- 4 -->
+    <section id="photos">
+      <h2>4. Photos</h2>
+      <p>
+        Aircraft recognition runs on your device with Google ML Kit. The
+        image used for recognition is not sent to us for that step.
+      </p>
+      <p style="margin-top:10px;">
+        The photo itself is stored on the device. Premium accounts can
+        also back it up. Cloud photo backup is on by default for Premium
+        and can be turned off in Settings. When it is on, the spotting
+        photo is compressed to a JPEG of about 50&nbsp;KB or less and
+        uploaded to a private storage area under your account id. Only
+        that account can read it. A photo uploaded while you had Premium
+        can still be restored later if the subscription ends. Extra photos
+        you add to a card from your gallery stay on the device and are
+        not part of this backup.
+      </p>
+    </section>
+
+    <!-- 5 -->
+    <section id="location">
+      <h2>5. Location</h2>
+      <p>
+        To find aircraft near you, the app sends a bounding box — a
+        rectangular area, not a saved trail of your movement — to the
+        OpenSky Network. That lookup is not stored as a location history.
+      </p>
+      <p style="margin-top:10px;">
+        When a capture is saved to a signed-in account, the device
+        coordinates at that moment, and the aircraft coordinates when
+        known, are stored with that capture. They are part of your
+        collection, not part of the leaderboard.
+      </p>
+    </section>
+
+    <!-- 6 -->
+    <section id="leaderboard">
+      <h2>6. Leaderboard and profiles</h2>
+      <p>
+        Signed-in players can see other players’ display name, country,
+        score, and capture counts on the all-time, weekly, and country
+        leaderboards. The weekly board can also show whether a place is
+        in line for Reward Points. Capture details, coordinates, and
+        photos are not shown there.
+      </p>
+      <p style="margin-top:10px;">
+        Profile rows are readable by any signed-in player, not only the
+        fields drawn on the leaderboard. Those rows also include the
+        account id, avatar URL, and subscription tier. They do not
+        include your email address.
+      </p>
+    </section>
+
+    <!-- 7 -->
     <section>
-      <h2>4. Third-party services</h2>
+      <h2>7. Third-party services</h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -403,18 +490,28 @@
             </tr>
             <tr>
               <td>Google Sign-In</td>
-              <td>Account ID, display name, profile picture URL</td>
-              <td>Authentication &amp; leaderboard identity</td>
+              <td>Account id, name, email, and picture URL if Google shares them</td>
+              <td>Sign-in and profile</td>
+            </tr>
+            <tr>
+              <td>Sign in with Apple</td>
+              <td>Apple account id, and name or email if Apple shares them</td>
+              <td>Sign-in and profile. A refresh token is stored so we can revoke Apple access if you delete the account</td>
             </tr>
             <tr>
               <td>Supabase</td>
-              <td>Score, capture count, subscription status</td>
-              <td>Leaderboard &amp; subscription sync (when signed in)</td>
+              <td>Account, profile, capture records, optional backup photo, purchases, and diagnostic events</td>
+              <td>Run the game for a signed-in account, including guests</td>
+            </tr>
+            <tr>
+              <td>Google AdMob</td>
+              <td>Advertising id and device data, if ads are allowed</td>
+              <td>Optional rewarded ads for an extra capture</td>
             </tr>
             <tr>
               <td>Apple App Store / Google Play</td>
-              <td>Purchase receipt (processed by Apple/Google)</td>
-              <td>In-app purchase verification</td>
+              <td>Purchase receipt, processed by Apple or Google</td>
+              <td>Verify a subscription or consumable</td>
             </tr>
             <tr>
               <td>Wikimedia Commons</td>
@@ -429,32 +526,40 @@
         default. If you enable it in Settings, you provide an email address
         that is sent as a User-Agent header to Planespotters.net only —
         per their API terms. It is stored locally on your device and is
-        never sent to any other service.
+        never sent to any other service. If you connect an optional OpenSky
+        account, its client id and client secret stay on the device and are
+        sent only to OpenSky.
       </div>
     </section>
 
-    <!-- 5 -->
+    <!-- 8 -->
     <section>
-      <h2>5. Ads &amp; tracking</h2>
+      <h2>8. Ads, product events, and crash reports</h2>
       <p>
-        PlaneCollector uses <strong>Google AdMob</strong> to display
-        rewarded ads (optional, in exchange for extra catches). AdMob
-        may collect a device advertising ID and device information for
-        ad personalisation, subject to
+        PlaneCollector uses <strong>Google AdMob</strong> for optional
+        rewarded ads, in exchange for an extra capture. AdMob may collect
+        an advertising id and device information for ad personalisation,
+        subject to
         <a href="https://policies.google.com/privacy" style="color:var(--blue)">Google's Privacy Policy</a>.
-        You can opt out of personalised ads in your device settings
-        (Google &rarr; Ads &rarr; Opt out of Ads Personalisation).
-        We do not use any other analytics, crash reporting, or telemetry SDK.
+        On iOS the app asks for App Tracking Transparency before AdMob
+        starts. You can refuse that, and you can turn off personalised ads
+        in the device settings.
       </p>
-      <div class="highlight">
-        <strong>What is never sent:</strong> user photos, precise GPS point,
-        email to any service other than Planespotters.net (opt-in).
-      </div>
+      <p style="margin-top:10px;">
+        We do not use a third-party analytics or crash-reporting SDK such
+        as Firebase or Sentry. The app does send a small amount of
+        first-party diagnostics to our own database when you are signed in:
+      </p>
+      <ul style="margin-top:10px;">
+        <li>product events, such as finishing onboarding, opening the camera, attempting a capture, or tapping invite, together with your account id, app version, build number, and platform;</li>
+        <li>a daily activity registration with app version, build number, and platform;</li>
+        <li>crash and operational error reports with app version, platform, OS version, device name, screen name, error text, and stack trace. Email addresses and tokens are removed before upload. Your account id is included when you are signed in.</li>
+      </ul>
     </section>
 
-    <!-- 6 -->
+    <!-- 9 -->
     <section>
-      <h2>6. In-App Purchases &amp; Payments</h2>
+      <h2>9. In-app purchases and payments</h2>
       <p>
         PlaneCollector offers optional in-app purchases (subscriptions and
         consumable items) processed entirely by <strong>Apple App Store</strong>
@@ -474,16 +579,16 @@
 
     <!-- 7 -->
     <section>
-      <h2>7. Data Security</h2>
+      <h2>10. Data security</h2>
       <p>
         We take reasonable technical measures to protect your data:
       </p>
       <ul style="margin-top:10px;">
         <li>All communication between the app and our servers uses <strong>HTTPS/TLS encryption</strong>.</li>
         <li>Cloud data is stored in <strong>Supabase</strong> (hosted on AWS), which provides encryption at rest and in transit.</li>
-        <li>Access to cloud data is restricted by Row-Level Security (RLS) — you can only read and modify your own data.</li>
-        <li>Server-side functions run in an isolated environment with no access to other users' data.</li>
-        <li>Photos and captures never leave your device and are therefore not subject to network-level risk.</li>
+        <li>Capture records and backed-up photos are limited to your own account.</li>
+        <li>Profile rows can be read by other signed-in players, as described in section 6.</li>
+        <li>Server-side functions run with access limited to the signed-in account.</li>
       </ul>
       <p style="margin-top:10px;">
         No system is perfectly secure. If you believe there has been a
@@ -494,18 +599,31 @@
 
     <!-- 8 -->
     <section>
-      <h2>8. Data retention</h2>
+      <h2>11. How long we keep data, and deletion</h2>
       <p>
-        All local data (captures, photos, settings) is stored on your
-        device and removed when you uninstall the app. Cloud data (score,
-        capture count) is deleted on request — see the contact section
-        below.
+        Local data stays on the device until you uninstall the app, sign
+        out, or delete the account. Signing out clears the local collection.
+      </p>
+      <p style="margin-top:10px;">
+        While you are signed in, including as a guest, Profile has
+        <strong>Delete account</strong>. That permanently deletes the
+        sign-in account, the profile, the capture records, and the backed-up
+        photos for that account. If you signed in with Apple, we also revoke
+        the stored Apple refresh token when Apple’s service is available.
+        A temporary Apple outage can delay deletion until you try again.
+      </p>
+      <p style="margin-top:10px;">
+        Diagnostic reports are not deleted as their own step. Some are kept
+        with the account id removed when the account is deleted, and some
+        may remain until we remove them on request. Email us if you want
+        those deleted as well. A guest who can no longer sign in cannot
+        press Delete account, and should email us instead.
       </p>
     </section>
 
-    <!-- 9 -->
+    <!-- 12 -->
     <section>
-      <h2>9. Children</h2>
+      <h2>12. Children</h2>
       <p>
         PlaneCollector is not directed at children under 13 and we do not
         knowingly collect personal data from children. If you believe a
@@ -515,7 +633,7 @@
 
     <!-- 10 -->
     <section>
-      <h2>10. Changes to this policy</h2>
+      <h2>13. Changes to this policy</h2>
       <p>
         If we make material changes, the "Last updated" date at the top of
         this page will be revised. Continued use of the app after changes
@@ -525,12 +643,14 @@
 
     <!-- 11 – Contact -->
     <section>
-      <h2>11. Contact &amp; data deletion</h2>
+      <h2>14. Contact</h2>
       <div class="contact-box">
         <p>
-          Questions about this policy, or want to delete your account and
-          all associated cloud data? Send us an email and we will respond
-          within 30 days.
+          Questions about this policy, or a deletion we did not complete
+          in the app? Email deikoo@msn.com. We aim to respond within 30 days.
+          The
+          <a href="https://deikoo.github.io/planecollector-terms/" style="color:var(--blue)">Terms of Service</a>
+          explain how the game, Guest Mode, and purchases work.
         </p>
         <!-- TODO: replace with your real contact email -->
         <a href="mailto:deikoo@msn.com">Contact us</a>
